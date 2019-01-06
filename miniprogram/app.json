@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云集惠",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#404040",
+    "selectedColor": "#fc8449",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "商家",
+        "iconPath": "images/tabBar/icon_company.png",
+        "selectedIconPath": "images/tabBar/icon_company.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": "创业岛",
+        "iconPath": "images/tabBar/icon_money.png",
+        "selectedIconPath": "images/tabBar/icon_money.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": "贴吧",
+        "iconPath": "images/tabBar/icon_tieba.png",
+        "selectedIconPath": "images/tabBar/icon_tieba.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": "配送",
+        "iconPath": "images/tabBar/icon_send.png",
+        "selectedIconPath": "images/tabBar/icon_send.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": "我的",
+        "iconPath": "images/tabBar/icon_my.png",
+        "selectedIconPath": "images/tabBar/icon_my.png"
+      }
+    ]
+  }
+}
