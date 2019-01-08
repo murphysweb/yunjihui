@@ -1,6 +1,5 @@
 {
 	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
@@ -38,9 +37,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "引导页",
-					"pathName": "pages/guide/guide"
+					"pathName": "pages/index/index",
+					"query": ""
 				}
 			]
 		}

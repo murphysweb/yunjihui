@@ -1,5 +1,0 @@
-<!--miniprogram/pages/guide/guide.wxml-->
-<view class="page">
-  <view>生活，因我而乐</view>
-  <button>立即体验</button>
-</view>
