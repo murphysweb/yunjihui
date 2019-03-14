@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/index2/index",
-    "pages/send/send"
+    "pages/detail/detail",
+    "pages/send/send",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +42,7 @@
         "selectedIconPath": "images/tabBar/icon_send.png"
       },
       {
-        "pagePath": "pages/index2/index",
+        "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/tabBar/icon_my.png",
         "selectedIconPath": "images/tabBar/icon_my.png"
