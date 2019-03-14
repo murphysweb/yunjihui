@@ -91,27 +91,7 @@ App({
   onShow: function (options) {
     var that = this;
     console.log("options", options)
-    //记录群访问来源
-    var share_ticket = options.shareTicket;
-    console.log("5555", share_ticket)
-    if (share_ticket) {
-      wx.setStorageSync('group_info', share_ticket);
-    } else {
-      wx.setStorageSync('group_info', '');
-    }
-
-    console.log('APPJS：' + JSON.stringify(options));
-
-    var query = options.query;
-    //从APP进入的小程序。保存带过来的参数
-    if (query.is_app == 1) {
-      console.log(query);
-      that.data.from_app_params = {
-        is_app: 1,
-        dvd_user_id: query.dvd_user_id,
-        cat_id: query.cat_id
-      };
-    }
+  
 
     if (wx.getUpdateManager) {
       const updateManager = wx.getUpdateManager()

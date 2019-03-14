@@ -1,14 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index2/index"
+    "pages/index2/index",
+    "pages/send/send"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ED414A",
+    "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "云集惠",
     "navigationBarTextStyle": "#fff",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   "tabBar": {
     "color": "#404040",
@@ -33,7 +34,7 @@
         "selectedIconPath": "images/tabBar/icon_tieba.png"
       },
       {
-        "pagePath": "pages/index2/index",
+        "pagePath": "pages/send/send",
         "text": "配送",
         "iconPath": "images/tabBar/icon_send.png",
         "selectedIconPath": "images/tabBar/icon_send.png"

@@ -1,0 +1,5 @@
+/* pages/send/send.wxss */
+.banner-img image{
+  width: 750rpx !important;
+  height: 300rpx;
+}

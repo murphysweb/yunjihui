@@ -16,9 +16,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-
-    wx.hideShareMenu();
-
     var user_info = wx.getStorageSync('user_info');
 
     wx.showLoading({
@@ -34,7 +31,7 @@ Page({
       if ((user_info.nickname || user_info.user_icon)) {
         setTimeout(function () {
           wx.reLaunch({
-            url: '/pages/group_mylist/index',
+            url: '/pages/index2/index',
           })
         }, 300);
         return false;
@@ -88,7 +85,7 @@ Page({
         user_info_local.create_time = res.result.create_time;
         wx.setStorageSync('user_info', user_info_local);
         wx.reLaunch({
-          url: '/pages/group_mylist/index',
+          url: '/pages/index2/index',
         })
       } else {
         app.msg(res.message);
