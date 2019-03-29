@@ -31,7 +31,7 @@ Page({
       if ((user_info.nickname || user_info.user_icon)) {
         setTimeout(function () {
           wx.reLaunch({
-            url: '/pages/index2/index',
+            url: '/pages/tieba/tieba',
           })
         }, 300);
         return false;

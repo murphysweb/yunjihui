@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index2/index",
     "pages/detail/detail",
     "pages/send/send",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/tieba/tieba"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,19 +18,19 @@
     "selectedColor": "#fc8449",
     "list": [
       {
-        "pagePath": "pages/index2/index",
+        "pagePath": "pages/tieba/tieba",
         "text": "商家",
         "iconPath": "images/tabBar/icon_company.png",
         "selectedIconPath": "images/tabBar/icon_company.png"
       },
       {
-        "pagePath": "pages/index2/index",
+        "pagePath": "pages/tieba/tieba",
         "text": "创业岛",
         "iconPath": "images/tabBar/icon_money.png",
         "selectedIconPath": "images/tabBar/icon_money.png"
       },
       {
-        "pagePath": "pages/index2/index",
+        "pagePath": "pages/tieba/tieba",
         "text": "贴吧",
         "iconPath": "images/tabBar/icon_tieba.png",
         "selectedIconPath": "images/tabBar/icon_tieba.png"
