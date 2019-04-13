@@ -18,18 +18,7 @@
       "color": "#404040",
       "selectedColor": "#fc8449",
       "list": [
-        {
-          "pagePath": "pages/detail/detail",
-          "text": "商家",
-          "iconPath": "images/tabBar/icon_company.png",
-          "selectedIconPath": "images/tabBar/icon_company.png"
-        },
-        {
-          "pagePath": "pages/tepmate/index",
-          "text": "创业岛",
-          "iconPath": "images/tabBar/icon_money.png",
-          "selectedIconPath": "images/tabBar/icon_money.png"
-        },
+
         {
           "pagePath": "pages/tieba/tieba",
           "text": "贴吧",

@@ -1,6 +1,8 @@
 var app = getApp();
 Page({
   data: {
+    StatusBar: app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
     foodtype: 0,
     num: 0,
     buycar_num: 0,
