@@ -8,24 +8,8 @@ Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
-    lists: [{
-        name: "文小港",
-        desc: "贾师傅啊可接受的来附近阿道夫埃里克森京东方来看加快了时代峻峰奥斯卡大姐夫拉克束带结发",
-        img: [
-          'https://image.weilanwl.com/img/square-3.jpg',
-          'https://image.weilanwl.com/img/square-3.jpg',
-          'https://image.weilanwl.com/img/square-3.jpg'
-        ]
-      },
-      {
-        name: "文小港",
-        desc: "贾师傅啊可接受的来附近阿道夫埃里克森京东方来看加快了时代峻峰奥斯卡大姐夫拉克束带结发",
-        img: [
-          'https://image.weilanwl.com/img/square-3.jpg',
-          'https://image.weilanwl.com/img/square-3.jpg',
-          'https://image.weilanwl.com/img/square-3.jpg'
-        ]
-      }
+    items: [
+      
     ],
     mainTaps:[
       {
@@ -53,7 +37,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var that = this;
     // 请求改页数据
+    wx.request({
+      url: app.globalData.url+"/api/cms/cmsContent/list",
+      data: {
+
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data.data.data);
+        that.setData({
+          items: res.data.data.data
+        })
+      },
+      fail: function () {
+
+      }
+    })
+    that.setData({
+      url: app.globalData.url
+    })
   },
 
   /**

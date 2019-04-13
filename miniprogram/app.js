@@ -19,7 +19,7 @@ App({
     var system_info = wx.getSystemInfoSync();
   },
   globalData: {
-
+    url: 'https://kq.zt647.com'
   },
   /**
    * 获取session_key
