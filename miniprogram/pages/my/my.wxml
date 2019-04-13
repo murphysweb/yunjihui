@@ -1,25 +1,55 @@
 <!--miniprogram/pages/my/my.wxml2-->
 <view>
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 配送
+    </navigator>
+  </view>
+</view>
   <!--me.wxml  -->
   <view class="container page4">
     <view class="mePic">
-      <image src="{{img}}"></image>
+      <image src="{{user_icon}}"></image>
+      <text>{{nickname}}</text>
     </view>
-    <view class="mePag" bindtap="toMyPackage">
-      <view>
-        <text class="iconfont icon-pag2">  我的红包</text>
-        <text class="iconfont icon-more"></text>
+    <view class="cu-list menu">
+      <view class="cu-item arrow">
+        <view class='content'>
+          <text class='icon-warn text-green'></text>
+          <text class='text-grey'>文本</text>
+        </view>
+        <view class='action'>
+          <text class='text-grey text-sm'>小目标还没有实现！</text>
+        </view>
       </view>
-    </view>
-    <view class="mePag" bindtap="toMyAddress">
-      <view class="meMap">
-        <text class="iconfont icon-map">  我的地址</text>
-        <text class="iconfont icon-more"></text>
+       <view class="cu-item arrow">
+        <view class='content'>
+          <text class='icon-warn text-green'></text>
+          <text class='text-grey'>文本</text>
+        </view>
+        <view class='action'>
+          <text class='text-grey text-sm'>小目标还没有实现！</text>
+        </view>
       </view>
-    </view>
-    <view class="calling" bindtap="calling">
-      订餐电话：
-      <text class="phoneColor">1234567</text>
+       <view class="cu-item arrow">
+        <view class='content'>
+          <text class='icon-warn text-green'></text>
+          <text class='text-grey'>文本</text>
+        </view>
+        <view class='action'>
+          <text class='text-grey text-sm'>小目标还没有实现！</text>
+        </view>
+      </view>
+       <view class="cu-item arrow">
+        <view class='content'>
+          <text class='icon-warn text-green'></text>
+          <text class='text-grey'>文本</text>
+        </view>
+        <view class='action'>
+          <text class='text-grey text-sm'>小目标还没有实现！</text>
+        </view>
+      </view>
     </view>
   </view>
 </view>

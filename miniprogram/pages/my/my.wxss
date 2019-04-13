@@ -6,47 +6,19 @@ view{
 }
 .page4 .mePic {
   width: 100%;
-  height: 400rpx;
+  height: 250rpx;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #ffe400;
+  background: #fa5c0d;
+  padding-left: 40rpx;
 }
 .page4 .mePic image {
   width: 130rpx;
   height: 130rpx;
   border-radius: 50%;
 }
-.page4 .mePag{
-  width: 100%;
-}
-.page4 .mePag>view {
-  padding: 32rpx 40rpx;
-  background: white;
-  font-size: 32rpx;    
-  display: flex;
-  justify-content: space-between;
-  align-items: center;  
-}
-.page4 .meMap {
-  border-top: 2rpx #f2f2f2 solid;
-}
-.page4 .mePag .meMore {
-  font-size: 44rpx;
-}
-.page4 .calling {
-  margin-top: 60rpx;
-  text-align: center;
-  padding: 30rpx;
-  background: white;
-}
-.page4 .phoneColor {
-  color: rgb(40,136,252);
-}
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.page4 .mePic text {
+ color:#FFF;
+ margin-left: 20rpx;
+ font-weight: 500;
 }

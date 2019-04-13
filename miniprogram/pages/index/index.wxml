@@ -2,6 +2,6 @@
 <view class="page">
   <view>生活，因我而乐</view>
   <form report-submit='true' bindsubmit='fetchFormId'>
-    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' form-type='submit'>立即体验</button>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfos' form-type='submit'>立即体验</button>
   </form>
 </view>

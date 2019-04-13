@@ -1,2 +1,39 @@
 <!--pages/tieba/tieba.wxml-->
-<text>pages/tieba/tieba.wxml</text>
+<view>
+  <view class="cu-custom" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+        <text class='icon-back'></text> 贴吧
+      </navigator>
+    </view>
+  </view>
+  <scroll-view class="bg-white nav text-center top-nav">
+    <view class="cu-item {{tapValue == item.id ? 'cur' : ''}}" wx:for="{{mainTaps}}" data-id="{{index}}" bindtap='tabSelect'>
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <!-- 贴吧列表 -->
+  <view class="cu-list menu menu-avatar" wx:for="{{lists}}">
+    <view class="cu-item">
+      <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+      <view class='content'>
+        <view class='text-grey'>{{item.name}}</view>
+        <view class='text-gray text-sm'>
+          <text class='text-red'></text> 火箭少女101</view>
+      </view>
+    </view>
+    <!-- 描述内容和媒体文件 -->
+    <view class="desc-media">
+      <view class='desc'>{{item.desc}}</view>
+      <view class='media'>
+        <image bindtap='lookImg' wx:for="{{item.img}}" wx:for-item="images" wx:for-index="idx" data-img="{{item.img}}" data-idx="{{idx}}" mode='widthFix' src='{{images}}'></image>
+      </view>
+      <!-- 分享和留言模块儿 -->
+      <view class='social-contact'>
+        <text class="icon-share">分享</text>
+        <text class="icon-message">18</text>
+        <text class="icon-appreciate">18</text>
+      </view>
+    </view>
+  </view>
+</view>

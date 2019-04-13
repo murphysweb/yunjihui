@@ -17,7 +17,6 @@ Page({
   onLoad: function (options) {
     var that = this;
     var user_info = wx.getStorageSync('user_info');
-
     wx.showLoading({
       title: '加载中...',
     })
@@ -50,9 +49,8 @@ Page({
   /**
    * 获取微信信息绑定
    */
-  getUserInfo: function (event) {
+  getUserInfos: function (event) {
     var that = this;
-
     var user_info = event.detail.userInfo;
     if (!user_info) {
       app.msg('允许授权后才能进行相关操作');
@@ -85,7 +83,7 @@ Page({
         user_info_local.create_time = res.result.create_time;
         wx.setStorageSync('user_info', user_info_local);
         wx.reLaunch({
-          url: '/pages/index2/index',
+          url: '/pages/send/send',
         })
       } else {
         app.msg(res.message);

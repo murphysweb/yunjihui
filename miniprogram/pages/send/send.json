@@ -1,9 +1,3 @@
 {
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "配送",
-  "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light",
-  "navigationStyle": "default",
   "usingComponents": {}
 }

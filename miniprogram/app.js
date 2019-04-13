@@ -1,3 +1,4 @@
+//app.js
 var request_tool = require('tools/request.js');
 var $ = new request_tool();
 App({
@@ -6,38 +7,24 @@ App({
     domain: 'https://www.easy-mock.com/mock/5b6a9e8c91ab8d1a17b1cc2d/miniapp', //本地环境
     //domain: 'https://qt.davdian.com/index' //线上环境
   },
-  /**
-   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次
-   */
-  onLaunch: function (options) {
-    var that = this;
+  onLaunch: function() {
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let custom = wx.getMenuButtonBoundingClientRect();
+        this.globalData.Custom = custom;
+        this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+      }
+    })
     var system_info = wx.getSystemInfoSync();
-    console.log("system_info", system_info);
   },
+  globalData: {
 
-  /**
-   * 页面未找到兼容情况
-   */
-  onPageNotFound: function (res) {
-    var params = res.query;
-    var query_str = '';
-    for (var x in params) {
-      query_str += x + '=' + params[x] + '&';
-    }
-    query_str = query_str.slice(0, -1);
-
-    //兼容简版的品牌会员计划
-    if (res.path == 'pages/join_group/index') {
-      wx.reLaunch({
-        url: '/pages/group_detail/index?' + query_str,
-      })
-    }
   },
-
   /**
    * 获取session_key
    */
-  getSessionKey: function (cb) {
+  getSessionKey: function(cb) {
     var that = this;
 
     var user_info = wx.getStorageSync('user_info');
@@ -46,10 +33,10 @@ App({
       that.getNewSessionKey(cb);
     } else {
       wx.checkSession({
-        success: function () {
+        success: function() {
           typeof cb == 'function' && cb(session_key);
         },
-        fail: function (res) {
+        fail: function(res) {
           //session_key过期，需要重新获取
           that.getNewSessionKey(cb);
         }
@@ -60,18 +47,18 @@ App({
   /**
    * 重新获取session_key
    */
-  getNewSessionKey: function (cb) {
+  getNewSessionKey: function(cb) {
     var that = this;
     wx.login({
-      success: function (res) {
+      success: function(res) {
         console.log("微信授权信息", res)
         var params = {
           code: res.code,
           user_token: that.get_token()
         };
-        $.get(that.data.domain + '/auth/getNewSessionKey', params).then(function (res) {
+        $.get(that.data.domain + '/auth/getNewSessionKey', params).then(function(res) {
           if (res.code == -999) {
-            that.login(function () {
+            that.login(function() {
               that.getNewSessionKey(cb);
             })
           } else if (res.code == 100) {
@@ -84,27 +71,26 @@ App({
       }
     })
   },
-
   /**
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
-  onShow: function (options) {
+  onShow: function(options) {
     var that = this;
     console.log("options", options)
-  
+
 
     if (wx.getUpdateManager) {
       const updateManager = wx.getUpdateManager()
-      updateManager.onCheckForUpdate(function (res) {
+      updateManager.onCheckForUpdate(function(res) {
         // 请求完新版本信息的回调
         console.log('是否有新版本：' + res.hasUpdate);
       })
-      updateManager.onUpdateReady(function () {
+      updateManager.onUpdateReady(function() {
         wx.showModal({
           title: '更新提示',
           content: '有新版发布啦，快来体验新功能吧~',
           confirmText: "体验新版",
-          success: function (res) {
+          success: function(res) {
             if (res.confirm) {
               // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
               updateManager.applyUpdate()
@@ -118,14 +104,14 @@ App({
   /**
    * 当小程序从前台进入后台，会触发 onHide
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息
    */
-  onError: function (msg) {
+  onError: function(msg) {
 
   },
 
@@ -133,16 +119,16 @@ App({
    * 登录
    * 默认清除本地缓存再发起登录操作
    */
-  login: function (cb) {
+  login: function(cb) {
     var that = this;
     wx.setStorageSync('user_info', '');
     wx.login({
-      success: function (res) {
+      success: function(res) {
         var code = res.code;
         var params = {
           code: code
         };
-        $.get(that.data.domain + '/auth/login', params).then(function (res) {
+        $.get(that.data.domain + '/auth/login', params).then(function(res) {
           wx.hideLoading();
           if (res.code == 100) {
             if (res.result) {
@@ -162,7 +148,7 @@ App({
   /**
    * 保存form_id
    */
-  saveFormId: function (form_id, type) {
+  saveFormId: function(form_id, type) {
     return false;
 
     var that = this;
@@ -173,9 +159,9 @@ App({
       type: type
     };
 
-    $.get(that.data.domain + '/user/saveFormId', params).then(function (res) {
+    $.get(that.data.domain + '/user/saveFormId', params).then(function(res) {
       if (res.code == -999) {
-        that.login(function () {
+        that.login(function() {
           that.saveFormId(form_id, type);
         })
       }
@@ -185,7 +171,7 @@ App({
   /**
    * 获取api请求token
    */
-  get_token: function () {
+  get_token: function() {
     var user_info = wx.getStorageSync('user_info');
     return user_info.user_token;
   },
@@ -193,7 +179,7 @@ App({
   /**
    * 错误提醒
    */
-  msg: function (msg) {
+  msg: function(msg) {
     wx.showToast({
       title: msg,
       duration: 2500,
@@ -204,7 +190,7 @@ App({
   /**
    *  解析地址栏参数
    */
-  parseUlr: function (str, name) {
+  parseUlr: function(str, name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = str.match(reg);
     if (r != null) return unescape(r[2]);

@@ -1,1 +1,41 @@
 /* pages/tieba/tieba.wxss */
+.cu-list{
+  background: #FFF;
+}
+.desc-media{
+  position: relative;
+  z-index: 1;
+  margin-top: -1rpx;
+  background: #FFF;
+  padding: 10rpx 25rpx;
+}
+.desc{
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.media image{
+  width: 30%;
+}
+.media image + image{
+  margin-left: 10rpx;
+}
+.social-contact{
+  display: flex;
+  padding: 20rpx 0;
+}
+.social-contact text{
+  flex: 1;
+  text-align: center;
+  color:#999;
+}
+.cu-list + .cu-list{
+  margin-top: 10rpx;
+}
+.cur{
+  color:#fa5c0d;
+}
+.nav.top-nav{
+  border-bottom:1rpx solid rgb(236, 236, 236);
+}

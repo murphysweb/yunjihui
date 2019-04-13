@@ -7,7 +7,7 @@
   background-color: #fa5c0d;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position-y: -85rpx;
+  background-position-y: 0;
 }
 
 .page view {

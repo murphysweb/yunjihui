@@ -1,18 +1,20 @@
-// miniprogram/pages/my/my.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    StatusBar: app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var user_info = wx.getStorageSync('user_info');
+    this.setData(user_info);
   },
 
   /**
