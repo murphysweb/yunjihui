@@ -5,47 +5,27 @@
     </navigator>
   </view>
 </view>
-<view class="cu-list grid col-5 {{gridBorder?'':'no-border'}}">
+<!-- <view class="cu-list grid col-5 {{gridBorder?'':'no-border'}}">
   <view class="cu-item" wx:for="{{iconList}}">
     <image class="icon-img" mode="aspectFit" src='{{item.img}}'></image>
     <text>{{item.name}}</text>
   </view>
-</view>
+</view> -->
 <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
   <swiper-item wx:for="{{4}}" wx:key>
     <image src="https://image.weilanwl.com/img/4x3-{{index+1}}.jpg" mode='aspectFill'></image>
   </swiper-item>
 </swiper>
-<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
-  <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{10}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-    Tab{{index}}
-  </view>
-</scroll-view>
 <view class="cu-list menu menu-avatar">
-  <view class="cu-item ">
-    <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"></view>
+  <view class="cu-item" wx:for="{{items}}">
+    <view class="cu-avatar radius lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
     <view class='content'>
-      <view>喵星人互动群</view>
+      <view>{{item.name}}</view>
       <view class='text-gray text-sm'>
-        <view>喵星酱：喵喵喵！</view><view class='item-right-cell'>18km</view>
+        <view>悬赏积分:{{item.point}}</view>
+        <view>{{item.detail}}</view>
+        <view class='item-right-cell'>18km</view>
         </view>
-        <view class='text-gray text-sm'>
-        喵星酱：喵喵喵！</view>
-         <view class='text-gray text-sm'>
-        喵星酱：喵喵喵！</view>
     </view>
-  </view>
-    <view class="cu-item ">
-    <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"></view>
-    <view class='content'>
-      <view>喵星人互动群</view>
-      <view class='text-gray text-sm'>
-        <view>喵星酱：喵喵喵！</view><view class='item-right-cell'>18km</view>
-        </view>
-        <view class='text-gray text-sm'>
-        喵星酱：喵喵喵！</view>
-         <view class='text-gray text-sm'>
-        喵星酱：喵喵喵！</view>
-    </view>
-  </view>
+  </view> 
 </view>

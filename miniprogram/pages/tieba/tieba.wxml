@@ -13,20 +13,20 @@
     </view>
   </scroll-view>
   <!-- 贴吧列表 -->
-  <view class="cu-list menu menu-avatar" wx:for="{{lists}}">
+  <view class="cu-list menu menu-avatar" wx:for="{{items}}">
     <view class="cu-item">
-      <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+      <view class="cu-avatar round lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
       <view class='content'>
-        <view class='text-grey'>{{item.name}}</view>
+        <view class='text-grey'>{{item.title}}</view>
         <view class='text-gray text-sm'>
-          <text class='text-red'></text> 火箭少女101</view>
+          <text class='text-red'></text> {{item.catName}}</view>
       </view>
     </view>
     <!-- 描述内容和媒体文件 -->
     <view class="desc-media">
-      <view class='desc'>{{item.desc}}</view>
+      <view class='desc'>{{item.content}}</view>
       <view class='media'>
-        <image bindtap='lookImg' wx:for="{{item.img}}" wx:for-item="images" wx:for-index="idx" data-img="{{item.img}}" data-idx="{{idx}}" mode='widthFix' src='{{images}}'></image>
+        <image bindtap='lookImg' mode='widthFix' src='{{url}}{{item.image}}'></image>
       </view>
       <!-- 分享和留言模块儿 -->
       <view class='social-contact'>
