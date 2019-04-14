@@ -38,9 +38,17 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    // 请求改页数据
+    that.getList();
+    that.setData({
+      url: app.data.domain
+    })
+  },
+  // 请求贴吧列表数据
+  getList(params){
+    let that = this;
+    // 请求该页数据
     wx.request({
-      url: app.globalData.url+"/api/cms/cmsContent/list",
+      url: app.data.domain + "/api/cms/cmsContent/list",
       data: {
 
       },
@@ -55,11 +63,7 @@ Page({
 
       }
     })
-    that.setData({
-      url: app.globalData.url
-    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -111,8 +115,8 @@ Page({
   lookImg: function(e) {
     console.log(e);
     let data = {
-      urls: e.target.dataset.img,
-      current: e.target.dataset.img[e.target.dataset.idx]
+      urls: e.target.dataset.img.split(','),
+      current: e.target.dataset.img
     }
     console.log(data);
     wx.previewImage(data);

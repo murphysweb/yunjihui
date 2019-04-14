@@ -14,26 +14,28 @@
   </scroll-view>
   <!-- 贴吧列表 -->
   <view class="cu-list menu menu-avatar" wx:for="{{items}}">
-    <view class="cu-item">
-      <view class="cu-avatar round lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
-      <view class='content'>
-        <view class='text-grey'>{{item.title}}</view>
-        <view class='text-gray text-sm'>
-          <text class='text-red'></text> {{item.catName}}</view>
+   
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
+        <view class='content'>
+          <view class='text-grey'>{{item.title}}</view>
+          <view class='text-gray text-sm'>
+            <text class='text-red'></text> {{item.catName}}</view>
+        </view>
       </view>
-    </view>
-    <!-- 描述内容和媒体文件 -->
-    <view class="desc-media">
-      <view class='desc'>{{item.content}}</view>
-      <view class='media'>
-        <image bindtap='lookImg' mode='widthFix' src='{{url}}{{item.image}}'></image>
+      <!-- 描述内容和媒体文件 -->
+      <view class="desc-media">
+        <view class='desc'>{{item.content}}</view>
+        <view class='media'>
+          <image bindtap="lookImg" mode='widthFix' src='{{url}}{{item.image}}'></image>
+        </view>
+        <!-- 分享和留言模块儿 -->
+        <view class='social-contact'>
+          <text class="icon-share">分享</text>
+          <text class="icon-message">18</text>
+          <text class="icon-appreciate">18</text>
+        </view>
       </view>
-      <!-- 分享和留言模块儿 -->
-      <view class='social-contact'>
-        <text class="icon-share">分享</text>
-        <text class="icon-message">18</text>
-        <text class="icon-appreciate">18</text>
-      </view>
-    </view>
+
   </view>
 </view>

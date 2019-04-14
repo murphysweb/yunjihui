@@ -17,15 +17,15 @@
   </swiper-item>
 </swiper>
 <view class="cu-list menu menu-avatar">
-  <view class="cu-item" wx:for="{{items}}">
-    <view class="cu-avatar radius lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
-    <view class='content'>
-      <view>{{item.name}}</view>
-      <view class='text-gray text-sm'>
-        <view>悬赏积分:{{item.point}}</view>
-        <view>{{item.detail}}</view>
-        <view class='item-right-cell'>18km</view>
+  <view class="cu-item" wx:for="{{items}}" bindtap='toDetail'>
+      <view class="cu-avatar radius lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
+      <view class='content'>
+        <view>{{item.name}}</view>
+        <view class='text-gray text-sm'>
+          <view>悬赏积分:{{item.point}}</view>
+          <view>{{item.detail}}</view>
+          <view class='item-right-cell'>18km</view>
         </view>
-    </view>
-  </view> 
+      </view>
+  </view>
 </view>

@@ -13,7 +13,7 @@ Page({
     // this.towerSwiper('tower');
     // 初始化towerSwiper 传已有的数组名即可
     wx.request({
-      url: app.globalData.url +"/api/task/task/list",
+      url: app.data.domain +"/api/task/task/list",
       data: {
         
       },
@@ -29,7 +29,12 @@ Page({
       }
     })
     that.setData({
-      url: app.globalData.url
+      url: app.data.domain
+    })
+  },
+  toDetail(){
+    wx.navigateTo({
+      url: "../detail/detail"
     })
   }
 })
