@@ -1,5 +1,5 @@
 var app = getApp();
-var request_tool = require('../../tools/request.js');
+var request_tool = require('../../utils/request.js');
 var $ = new request_tool();
 
 Page({
@@ -17,17 +17,12 @@ Page({
   onLoad: function (options) {
     var that = this;
     var user_info = wx.getStorageSync('user_info');
-    wx.showLoading({
-      title: '加载中...',
-    })
+   
     if (!user_info) {
-      app.login(function () {
-        that.onLoad(options);
-      });
-      return false;
+     
     } else {
       //如果用户已经绑定授权了用户信息，调到群列表页
-      if ((user_info.nickname || user_info.user_icon)) {
+      if ((user_info.nickname || user_info.avatarUrl)) {
         setTimeout(function () {
           wx.reLaunch({
             url: '/pages/tieba/tieba',
@@ -52,6 +47,7 @@ Page({
   getUserInfos: function (event) {
     var that = this;
     var user_info = event.detail.userInfo;
+    wx.setStorageSync('user_info', user_info);
     if (!user_info) {
       app.msg('允许授权后才能进行相关操作');
       return false;
@@ -61,34 +57,11 @@ Page({
       title: '加载中...',
       mask: true
     })
-
-    var params = {
-      user_token: app.get_token(),
-      nickname: user_info.nickName,
-      user_icon: user_info.avatarUrl,
-      gender: user_info.gender
-    };
-    $.get(app.data.domain + '/auth/save_userinfo', params).then(function (res) {
-      if (res.code == -999) {
-        app.login(function () {
-          that.getUserInfo(event);
-        })
-      } else if (res.code == 100) {
-        wx.hideLoading();
-        var user_info_local = wx.getStorageSync('user_info');
-        user_info_local.nickname = user_info.nickName;
-        user_info_local.user_icon = user_info.avatarUrl;
-        user_info_local.gender = user_info.gender;
-        user_info_local.has_bind_phone = res.result.has_bind_phone;
-        user_info_local.create_time = res.result.create_time;
-        wx.setStorageSync('user_info', user_info_local);
-        wx.reLaunch({
-          url: '/pages/send/send',
-        })
-      } else {
-        app.msg(res.message);
-      }
-    })
+    app.login(() => {
+      wx.reLaunch({
+        url: '../tieba/tieba'
+      })
+    });
   },
 
   /**

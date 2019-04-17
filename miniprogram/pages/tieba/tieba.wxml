@@ -7,7 +7,7 @@
       </navigator>
     </view>
   </view>
-  <scroll-view class="bg-white nav text-center top-nav">
+  <scroll-view class="bg-white nav text-center top-nav" wx:if="{{false}}">
     <view class="cu-item {{tapValue == item.id ? 'cur' : ''}}" wx:for="{{mainTaps}}" data-id="{{index}}" bindtap='tabSelect'>
       {{item.name}}
     </view>
@@ -26,11 +26,11 @@
       <!-- 描述内容和媒体文件 -->
       <view class="desc-media">
         <view class='desc'>{{item.content}}</view>
-        <view class='media'>
+        <view class='media' wx:if="{{item.image != ''}}">
           <image bindtap="lookImg" mode='widthFix' src='{{url}}{{item.image}}'></image>
         </view>
         <!-- 分享和留言模块儿 -->
-        <view class='social-contact'>
+        <view class='social-contact' wx:if="{{false}}">
           <text class="icon-share">分享</text>
           <text class="icon-message">18</text>
           <text class="icon-appreciate">18</text>

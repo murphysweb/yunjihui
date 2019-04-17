@@ -1,5 +1,5 @@
 //app.js
-var request_tool = require('tools/request.js');
+var request_tool = require('utils/request.js');
 var $ = new request_tool();
 App({
   data: {
@@ -26,7 +26,6 @@ App({
    */
   getSessionKey: function(cb) {
     var that = this;
-
     var user_info = wx.getStorageSync('user_info');
     var session_key = user_info.session_key;
     if (!session_key) {
@@ -77,8 +76,6 @@ App({
   onShow: function(options) {
     var that = this;
     console.log("options", options)
-
-
     if (wx.getUpdateManager) {
       const updateManager = wx.getUpdateManager()
       updateManager.onCheckForUpdate(function(res) {
@@ -119,27 +116,17 @@ App({
    * 登录
    * 默认清除本地缓存再发起登录操作
    */
-  login: function(cb) {
+  login: function(callback) {
     var that = this;
-    wx.setStorageSync('user_info', '');
+    // wx.setStorageSync('user_info', '');
     wx.login({
       success: function(res) {
-        var code = res.code;
         var params = {
-          code: code
+          appCode: res.code
         };
-        $.get(that.data.domain + '/auth/login', params).then(function(res) {
-          wx.hideLoading();
-          if (res.code == 100) {
-            if (res.result) {
-              wx.setStorageSync('user_info', res.result);
-            } else {
-              wx.setStorageSync('user_info', '');
-            }
-            typeof cb == 'function' && cb();
-          } else {
-            that.msg(res.message);
-          }
+        $.get(that.data.domain + '/api/token/wlogin', params, "POST").then(function (res) {
+          wx.setStorageSync('token', res.message);
+          callback();
         })
       }
     })

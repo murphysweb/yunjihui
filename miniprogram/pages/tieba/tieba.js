@@ -1,5 +1,7 @@
 // pages/tieba/tieba.js
 const app = getApp();
+var request_tool = require('../../utils/request.js');
+var $ = new request_tool();
 Page({
 
   /**
@@ -47,21 +49,11 @@ Page({
   getList(params){
     let that = this;
     // 请求该页数据
-    wx.request({
-      url: app.data.domain + "/api/cms/cmsContent/list",
-      data: {
-
-      },
-      method: 'GET',
-      success: function (res) {
-        console.log(res.data.data.data);
-        that.setData({
-          items: res.data.data.data
-        })
-      },
-      fail: function () {
-
-      }
+    $.get(app.data.domain + "/api/cms/cmsContent/list", {}).then(function (res) {
+      
+      that.setData({
+        items: res.data.data
+      })
     })
   },
   /**

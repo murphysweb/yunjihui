@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -54,6 +54,13 @@
 					"name": "我的",
 					"pathName": "pages/my/my",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "tieba",
+					"pathName": "pages/tieba/tieba",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
