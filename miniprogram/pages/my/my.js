@@ -1,4 +1,6 @@
 const app = getApp();
+var request_tool = require('../../utils/request.js');
+var $ = new request_tool();
 Page({
 
   /**
@@ -15,6 +17,13 @@ Page({
   onLoad: function (options) {
     var user_info = wx.getStorageSync('user_info');
     this.setData(user_info);
+    // 获取用户数据
+    $.get(app.data.domain + "/api/userprofile/userProfile/center", {}).then(res => {
+      this.setData({
+        users: res.data
+      })
+    })
+
   },
 
   /**

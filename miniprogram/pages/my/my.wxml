@@ -10,44 +10,17 @@
   <!--me.wxml  -->
   <view class="container page4">
     <view class="mePic">
-      <image src="{{user_icon}}"></image>
-      <text>{{nickname}}</text>
+      <image src="{{avatarUrl}}"></image>
+      <text>{{nickName}}</text>
     </view>
     <view class="cu-list menu">
       <view class="cu-item arrow">
         <view class='content'>
-          <text class='icon-warn text-green'></text>
-          <text class='text-grey'>文本</text>
+          <text class='text-green'></text>
+          <text class='text-grey'>用户积分</text>
         </view>
         <view class='action'>
-          <text class='text-grey text-sm'>小目标还没有实现！</text>
-        </view>
-      </view>
-       <view class="cu-item arrow">
-        <view class='content'>
-          <text class='icon-warn text-green'></text>
-          <text class='text-grey'>文本</text>
-        </view>
-        <view class='action'>
-          <text class='text-grey text-sm'>小目标还没有实现！</text>
-        </view>
-      </view>
-       <view class="cu-item arrow">
-        <view class='content'>
-          <text class='icon-warn text-green'></text>
-          <text class='text-grey'>文本</text>
-        </view>
-        <view class='action'>
-          <text class='text-grey text-sm'>小目标还没有实现！</text>
-        </view>
-      </view>
-       <view class="cu-item arrow">
-        <view class='content'>
-          <text class='icon-warn text-green'></text>
-          <text class='text-grey'>文本</text>
-        </view>
-        <view class='action'>
-          <text class='text-grey text-sm'>小目标还没有实现！</text>
+          <text class='text-grey text-sm'></text>
         </view>
       </view>
     </view>

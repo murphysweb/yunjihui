@@ -50,7 +50,6 @@ Page({
     let that = this;
     // 请求该页数据
     $.get(app.data.domain + "/api/cms/cmsContent/list", {}).then(function (res) {
-      
       that.setData({
         items: res.data.data
       })

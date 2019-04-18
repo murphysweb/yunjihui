@@ -39,3 +39,12 @@
 .nav.top-nav{
   border-bottom:1rpx solid rgb(236, 236, 236);
 }
+.my-add-tieba{
+  position: fixed;
+  right: 30rpx;
+  border-radius: 50%;
+  bottom: 50rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #fa5c0d;
+}

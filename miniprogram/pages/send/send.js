@@ -1,4 +1,6 @@
 const app = getApp();
+var request_tool = require('../../utils/request.js');
+var $ = new request_tool();
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
@@ -10,23 +12,11 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    // this.towerSwiper('tower');
-    // 初始化towerSwiper 传已有的数组名即可
-    wx.request({
-      url: app.data.domain +"/api/task/task/list",
-      data: {
-        
-      },
-      method: 'GET',
-      success: function (res) {
-        console.log(res.data.data.data);
-        that.setData({
-          items: res.data.data.data
-        })
-      },
-      fail: function () {
-        
-      }
+    $.get(app.data.domain + "/api/task/task/list", {}).then(res => {
+      console.log(res);
+      that.setData({
+        items: res.data.data
+      })
     })
     that.setData({
       url: app.data.domain
