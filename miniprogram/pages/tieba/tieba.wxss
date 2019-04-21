@@ -47,4 +47,5 @@
   width: 80rpx;
   height: 80rpx;
   background: #fa5c0d;
+  font-size: 30rpx;
 }

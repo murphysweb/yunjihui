@@ -1,42 +1,43 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/detail/detail",
     "pages/send/send",
     "pages/my/my",
     "pages/tieba/tieba",
-    "pages/tepmate/index"
+    "pages/tepmate/index",
+    "pages/addtiezi/addtiezi",
+    "pages/createsend/createsend"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "ColorUI",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
-    "tabBar": {
-      "color": "#404040",
-      "selectedColor": "#fc8449",
-      "list": [
-
-        {
-          "pagePath": "pages/tieba/tieba",
-          "text": "贴吧",
-          "iconPath": "images/tabBar/icon_tieba.png",
-          "selectedIconPath": "images/tabBar/icon_tieba.png"
-        },
-        {
-          "pagePath": "pages/send/send",
-          "text": "配送",
-          "iconPath": "images/tabBar/icon_send.png",
-          "selectedIconPath": "images/tabBar/icon_send.png"
-        },
-        {
-          "pagePath": "pages/my/my",
-          "text": "我的",
-          "iconPath": "images/tabBar/icon_my.png",
-          "selectedIconPath": "images/tabBar/icon_my.png"
-        }
-      ]
-    }
+  "tabBar": {
+    "color": "#404040",
+    "selectedColor": "#fc8449",
+    "list": [
+      {
+        "pagePath": "pages/tieba/tieba",
+        "text": "贴吧",
+        "iconPath": "images/tabBar/icon_tieba.png",
+        "selectedIconPath": "images/tabBar/icon_tieba.png"
+      },
+      {
+        "pagePath": "pages/send/send",
+        "text": "配送",
+        "iconPath": "images/tabBar/icon_send.png",
+        "selectedIconPath": "images/tabBar/icon_send.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabBar/icon_my.png",
+        "selectedIconPath": "images/tabBar/icon_my.png"
+      }
+    ]
+  }
 }

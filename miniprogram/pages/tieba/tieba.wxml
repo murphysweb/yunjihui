@@ -3,7 +3,7 @@
   <view class="cu-custom" style="height:{{CustomBar}}px;">
     <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
       <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-        <text class='icon-back'></text> 贴吧
+         贴吧
       </navigator>
     </view>
   </view>
@@ -13,14 +13,14 @@
     </view>
   </scroll-view>
   <view class="cu-card dynamic">
-    <view  wx:for="{{items}}" wx:key class="cu-item shadow">
+    <view wx:for="{{items}}" wx:key class="cu-item shadow">
       <view class="cu-list menu menu-avatar">
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url({{url}}{{item.publishUserAvatar}});"></view>
+          <view data-i="{{'httpsuiooio'}}" class="cu-avatar round lg" style="background-image:url({{item.publishUserAvatar}});"></view>
           <view class='content flex-sub'>
-            <view>{{item.title}}</view>
+            <view>{{item.publishUser}}</view>
             <view class='text-gray text-sm flex justify-between'>
-               {{item.catName}}
+              {{item.publishTime}}
             </view>
           </view>
         </view>
@@ -29,12 +29,12 @@
         {{item.content}}
       </view>
       <!--  -->
-      <view class="grid col-1 flex-sub padding-lr"  wx:if="{{item.image != ''}}">
-        <view class="bg-img only-img" style="background-image:url({{url}}{{item.image}});" wx:for="{{1}}" wx:key>
+      <view class="grid col-1 flex-sub padding-lr" wx:if="{{item.image != ''}}">
+        <view class="bg-img only-img" bindtap='lookImg' data-img="{{url}}{{item.image}}" style="background-image:url({{url}}{{item.image}});" wx:for="{{1}}" wx:for-item="img" wx:key>
         </view>
       </view>
-      <view class='text-gray text-sm text-right padding'>
-        <text class="icon-attentionfill"></text> 10
+      <view class='text-gray text-sm text-right padding' bindtap='notOpen'>
+        <text class="icon-attentionfill"></text> 0
         <text class="icon-appreciatefill"></text> 0
         <text class="icon-messagefill"></text> 0
       </view>
@@ -64,5 +64,7 @@
       </view>
     </view>
   </view>
-  <button class='cu-btn icon-add bg-green my-add-tieba'></button>
+  <!-- 加载条 -->
+  <view wx:if="loading" class="cu-load {{!isLoad?'loading':'over'}}"></view>
+  <button class='cu-btn icon-add bg-green my-add-tieba' bindtap='addtiezi'></button>
 </view>

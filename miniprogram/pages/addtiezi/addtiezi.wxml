@@ -1,0 +1,28 @@
+<!--miniprogram/pages/tiebapublish/addtiezi.wxml-->
+<view>
+  <view class="cu-custom" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+        <text class='icon-back'></text>
+      </navigator>
+    </view>
+  </view>
+  <!-- text -->
+  <view class="cu-form-group">
+    <textarea placeholder="这一刻的想法" maxlength="-1" bindinput="textinput" value='{{text}}'></textarea>
+  </view>
+  <!-- img -->
+  <view class="cu-form-group">
+    <view class="grid col-3 grid-square flex-sub">
+      <view class="padding-xs bg-img" wx:for="{{images}}" style="background-image:url({{url}}{{item}});">
+      </view>
+      <view class="padding-xs solids" wx:if="{{images.length < 1}}" bindtap='upload'>
+        <text class='icon-cameraadd'></text>
+      </view>
+    </view>
+  </view>
+  <!-- button -->
+  <view class="cu-bar btn-group margin-top add-tieba-btn">
+    <button class='cu-btn bg-green shadow-blur round lg' bindtap='publish'>发表</button>
+  </view>
+</view>

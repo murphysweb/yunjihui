@@ -121,14 +121,32 @@ App({
     // wx.setStorageSync('user_info', '');
     wx.login({
       success: function(res) {
-        var params = {
+        let params = {
           appCode: res.code
         };
-        $.get(that.data.domain + '/api/token/wlogin', params, "POST").then(function (res) {
-          wx.setStorageSync('token', res.message);
-          callback();
+        // 获取openid
+        $.get(that.data.domain + '/api/token/getOpenId', params).then(res => {
+          let userinfo = wx.getStorageSync('user_info');
+          let data = {
+            openId:res.message,
+            nickName: userinfo.nickName,
+            image: userinfo.avatarUrl
+          }
+          $.get(that.data.domain + '/api/token/wlogin2', data, "POST").then(function (res) {
+            wx.setStorageSync('token', res.message);
+            callback();
+          })
         })
+        let data = {
+
+        }
+        
       }
+    })
+  },
+  getOpenId(params) {
+    $.get(this.data.domain + '/api/token/getOpenId', params).then(res => {
+      console.log(res)
     })
   },
 

@@ -3,7 +3,7 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
   <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
     <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-      <text class='icon-back'></text> 配送
+      个人中心
     </navigator>
   </view>
 </view>
@@ -14,13 +14,13 @@
       <text>{{nickName}}</text>
     </view>
     <view class="cu-list menu">
-      <view class="cu-item arrow">
+      <view class="cu-item">
         <view class='content'>
           <text class='text-green'></text>
           <text class='text-grey'>用户积分</text>
         </view>
         <view class='action'>
-          <text class='text-grey text-sm'></text>
+          <text class='text-grey text-sm' style='font-size:28rpx;color:#fa5c0d;'>{{users.userProfile.currentPoint}}</text>
         </view>
       </view>
     </view>

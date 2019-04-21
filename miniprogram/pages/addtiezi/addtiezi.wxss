@@ -1,0 +1,4 @@
+/* miniprogram/pages/tiebapublish/addtiezi.wxss */
+.add-tieba-btn button{
+  background-color: #f54949;
+}

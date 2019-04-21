@@ -8,7 +8,7 @@
  * @param codeControl {boolean} 是否通过code码执行操作
  */
 // 签名生成
-var request = function (init) {
+var request = function(init) {
   init = init || {};
 }
 request.prototype = {
@@ -19,9 +19,15 @@ request.prototype = {
     let header = {
       "X-Auth-Token": wx.getStorageSync('token') || ""
     }
+    // 除了getOpenId wlogin2其余接口只要没有token就跳转到index去授权
+    if ((header["X-Auth-Token"] == "") && (url.indexOf("getOpenId") < 0 || url.indexOf("wlogin2") < 0)) {
+      wx.reLaunch({
+        url: '../index/index'
+      })
+    }
     // 合并请求头信息
     header = Object.assign(headers || {}, header);
-    let promise = new Promise(function (resolve, reject) {
+    let promise = new Promise(function(resolve, reject) {
       // 没有请求url或参数终止请求
       if (!url || !data) return false;
       // 默认所有请求触发加载状态
@@ -53,13 +59,20 @@ request.prototype = {
               duration: 2000
             });
           }
-          resolve(final_result);
+          if (final_result.code != 200){
+            wx.showToast({
+              content: final_result.message || '请求出错' ,
+              duration: 2000
+            });
+          }else{
+            resolve(final_result);
+          }
         },
         fail: (error) => {
           let apiArr = url.split("/");
           let api = apiArr[apiArr.length - 1]
           wx.showToast({
-            content: "请求出错["+api+"][" + error.status + "]",
+            content: "请求出错[" + api + "][" + error.status + "]",
             duration: 3000
           });
           console.error(error.data);
@@ -70,6 +83,7 @@ request.prototype = {
     return promise;
   }
 }
+
 function isBoolean(value) {
   return Object.prototype.toString.call(value) === "[object Boolean]";
 }
