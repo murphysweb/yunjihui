@@ -85,7 +85,7 @@ Page({
           title: '上传中...',
         })
         wx.uploadFile({
-          url: app.data.domain + "/api/upload/uploadAndCompressImage?maxK=50", // 仅为示例，非真实的接口地址
+          url: app.data.domain + "/api/upload/uploadAndCompressImage?maxK=400", // 仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           formData: {
@@ -128,9 +128,6 @@ Page({
         })
       }
       wx.hideLoading();
-    }).catch(err)
-    {
-      wx.hideLoading();
-    }
+    })
   }
 })

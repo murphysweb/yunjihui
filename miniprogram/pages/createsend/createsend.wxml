@@ -27,6 +27,6 @@
 </view>
   <!-- button -->
   <view class="cu-bar btn-group margin-top add-tieba-btn">
-    <button class='cu-btn bg-green shadow-blur round lg' bindtap='publish'>发表</button>
+    <button class='cu-btn bg-orange shadow-blur round lg' bindtap='publish'>发布</button>
   </view>
 </view>
