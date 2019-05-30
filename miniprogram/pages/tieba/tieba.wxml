@@ -29,7 +29,7 @@
         {{item.content}}
       </view>
       <!--  -->
-      <view class="grid col-1 flex-sub padding-lr" wx:if="{{item.image != ''}}">
+      <view class="grid col-1 flex-sub padding-lr" wx:if="{{item.image && item.image != 'undefined'}}">
         <view class="bg-img only-img" bindtap='lookImg' data-img="{{url}}{{item.image}}" style="background-image:url({{url}}{{item.image}});" wx:for="{{1}}" wx:for-item="img" wx:key>
         </view>
       </view>

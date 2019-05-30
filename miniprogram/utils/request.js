@@ -7,6 +7,7 @@
  * @param header {obj} 添加的请求头配置
  * @param codeControl {boolean} 是否通过code码执行操作
  */
+var app = getApp();
 // 签名生成
 var request = function(init) {
   init = init || {};
@@ -55,26 +56,31 @@ request.prototype = {
             }
           } catch (err) {
             wx.showToast({
-              content: "返回数据错误",
-              duration: 2000
-            });
+              title: "返回数据错误",
+              duration: 2500,
+              icon: 'none'
+            })
           }
-          if (final_result.code != 200){
-            wx.showToast({
-              content: final_result.message || '请求出错' ,
-              duration: 2000
-            });
-          }else{
+          if (final_result.code == 200) {
             resolve(final_result);
+          } else if (final_result.code == 401) {
+            resolve(final_result);
+          } else {
+            wx.showToast({
+              title: final_result.message || '请求出错',
+              duration: 2500,
+              icon: 'none'
+            })
           }
         },
         fail: (error) => {
           let apiArr = url.split("/");
           let api = apiArr[apiArr.length - 1]
           wx.showToast({
-            content: "请求出错[" + api + "][" + error.status + "]",
-            duration: 3000
-          });
+            title: "请求出错[" + api + "][" + error.status + "]",
+            duration: 2500,
+            icon: 'none'
+          })
           console.error(error.data);
           reject(error);
         }

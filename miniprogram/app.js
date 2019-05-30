@@ -5,7 +5,7 @@ App({
   data: {
     // 全局请求域名
     // domain: 'https://www.easy-mock.com/mock/5b6a9e8c91ab8d1a17b1cc2d/miniapp', //本地环境
-    domain: 'https://kq.zt647.com' //线上环境
+    domain: 'https://www.chuangyedaoyu.com' //线上环境
   },
   onLaunch: function() {
     wx.getSystemInfo({

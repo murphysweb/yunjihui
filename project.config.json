@@ -12,6 +12,8 @@
 	"projectname": "yunjihui",
 	"libVersion": "2.2.5",
 	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -29,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -73,6 +75,13 @@
 					"id": -1,
 					"name": "发起配送",
 					"pathName": "pages/createsend/createsend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index2/index2",
 					"scene": null
 				}
 			]

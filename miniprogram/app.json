@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index2/index2",
     "pages/detail/detail",
     "pages/send/send",
     "pages/my/my",
@@ -21,6 +22,12 @@
     "selectedColor": "#fc8449",
     "list": [
       {
+        "pagePath": "pages/index2/index2",
+        "text": "首页",
+        "iconPath": "images/tabBar/icon_tieba.png",
+        "selectedIconPath": "images/tabBar/icon_tieba.png"
+      },
+      {
         "pagePath": "pages/tieba/tieba",
         "text": "贴吧",
         "iconPath": "images/tabBar/icon_tieba.png",
@@ -39,5 +46,6 @@
         "selectedIconPath": "images/tabBar/icon_my.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

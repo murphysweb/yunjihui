@@ -77,7 +77,7 @@ Page({
     wx.chooseImage({
       success(res) {
         const tempFilePaths = res.tempFilePaths;
-        if (res.tempFiles[0].size > 5242880){
+        if (res.tempFiles[0].size > 5242880) {
           app.msg("图片过大");
           return false;
         }
@@ -85,19 +85,18 @@ Page({
           title: '上传中...',
         })
         wx.uploadFile({
-          url: app.data.domain + "/api/upload/uploadAndCompressImage?maxK=400", // 仅为示例，非真实的接口地址
+          url: app.data.domain + "/api/upload/uploadAndCompressImage?maxK=1000", // 仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
-          formData: {
-
-          },
+          formData: {},
           success(res) {
             let img = JSON.parse(res.data).data.attachmentUrl;
             that.data.images.push(img);
             that.setData({
               images: that.data.images
             })
-          },complete(res){
+          },
+          complete(res) {
             wx.hideLoading();
           }
         })
@@ -119,6 +118,12 @@ Page({
       "image": this.data.images[0],
       "content": this.data.text
     }
+    if (params.content != '' || !!params.image) {
+
+    } else {
+      app.msg("帖子内容不能为空~");
+      return false;
+    }
     $.get(app.data.domain + '/api/cms/cmsContent/publish', params, "POST", false, false, {
       "content-type": "application/x-www-form-urlencoded"
     }).then(res => {
@@ -126,6 +131,10 @@ Page({
         wx.reLaunch({
           url: '../tieba/tieba'
         })
+      } else {
+        app.login(() => {
+          this.publish();
+        });
       }
       wx.hideLoading();
     })

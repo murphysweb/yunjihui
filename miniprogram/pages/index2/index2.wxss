@@ -1,0 +1,156 @@
+/* pages/tieba/tieba.wxss */
+.cu-list{
+  background: #FFF;
+}
+.desc-media{
+  position: relative;
+  z-index: 1;
+  margin-top: -1rpx;
+  background: #FFF;
+  padding: 10rpx 25rpx;
+}
+.desc{
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.media image{
+  width: 30%;
+}
+.media image + image{
+  margin-left: 10rpx;
+}
+.social-contact{
+  display: flex;
+  padding: 20rpx 0;
+}
+.social-contact text{
+  flex: 1;
+  text-align: center;
+  color:#999;
+}
+.cu-list + .cu-list{
+  margin-top: 10rpx;
+}
+.cur{
+  color:#fa5c0d;
+}
+.nav.top-nav{
+  border-bottom:1rpx solid rgb(236, 236, 236);
+}
+.my-add-tieba{
+  position: fixed;
+  right: 30rpx;
+  border-radius: 50%;
+  bottom: 50rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #fa5c0d;
+  font-size: 30rpx;
+}
+.index-tab2{
+  height: 90rpx;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  background-color: #fa5c0d;
+  color:#FFF;
+  font-size: 32rpx;
+  font-weight: 600;
+  position: relative;
+}
+.index-tab2::after{
+  content: '';
+  width: 1rpx;
+  height: 75rpx;
+  background: #FFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.tb-item{
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.tb-item.active{
+  background: #FFF;
+  color:#fa5c0d;
+}
+.ad-img-bar image{
+  width: 100%;
+  display: block;
+  /* height: auto; */
+}
+.goods-item-boxs{
+  background: #FFF;
+  overflow: hidden;
+  padding: 0 32rpx;
+}
+.goods-item-boxs view{
+  /* display: block; */
+}
+
+
+.goods-item {
+  display: flex;
+  margin-top: 32rpx
+}
+
+.goods-item .goods-img {
+  width: 234rpx;
+  height: 176rpx;
+  overflow: hidden;
+  background: #555864;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+  position: relative
+}
+
+.goods-item .goods-img image {
+  height: 100%;
+  width: 100%
+}
+
+.goods-item .goods-img span {
+  display: inline-block;
+  position: absolute;
+  background: #555864;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  opacity: .7;
+  width: 100%;
+  height: 32rpx;
+  line-height: 32rpx
+}
+
+.goods-item .goods-info-li {
+  flex: 1;
+  margin-left: 32rpx
+}
+
+.goods-name {
+  font-size: 28rpx;
+  color: #0e1010;
+  line-height: 40rpx;
+  font-weight: 600
+}
+
+.goods-d-info {
+  font-size: 24rpx;
+  color: #8d9292;
+  height: 33rpx;
+  line-height: 33rpx;
+  margin-top: 12rpx
+}
+

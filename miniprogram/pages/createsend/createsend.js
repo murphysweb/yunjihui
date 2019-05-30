@@ -13,52 +13,52 @@ Page({
     title: "",
     text: "",
     ColorList: [{
-      title: '20',
-      name: 'red',
-      color: '#e54d42'
-    },
-    {
-      title: '40',
-      name: 'orange',
-      color: '#f37b1d'
-    },
-    {
-      title: '60',
-      name: 'yellow',
-      color: '#fbbd08'
-    },
-    {
-      title: '80',
-      name: 'olive',
-      color: '#8dc63f'
-    },
-    {
-      title: '100',
-      name: 'green',
-      color: '#39b54a'
-    }
+        title: '20',
+        name: 'red',
+        color: '#e54d42'
+      },
+      {
+        title: '40',
+        name: 'orange',
+        color: '#f37b1d'
+      },
+      {
+        title: '60',
+        name: 'yellow',
+        color: '#fbbd08'
+      },
+      {
+        title: '80',
+        name: 'olive',
+        color: '#8dc63f'
+      },
+      {
+        title: '100',
+        name: 'green',
+        color: '#39b54a'
+      }
     ],
-    point:""
+    point: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
   // 标题输入
@@ -82,7 +82,7 @@ Page({
       "name": this.data.title,
       "detail": this.data.text
     }
-    if (params.name == ""){
+    if (params.name == "") {
       app.msg("请输入标题");
       return false;
     }
@@ -101,18 +101,22 @@ Page({
         wx.reLaunch({
           url: '../send/send'
         })
+      } else {
+        app.login(() => {
+          this.publish();
+        });
       }
       wx.hideLoading();
-    }).catch(err)
+    }).catch(err) 
     {
       wx.hideLoading();
     }
   },
   // 积分选择
-  pointtap(e){
-   let num = e.currentTarget.dataset.num;
-   this.setData({
-     point:+num
-   })
+  pointtap(e) {
+    let num = e.currentTarget.dataset.num;
+    this.setData({
+      point: +num
+    })
   }
 })
