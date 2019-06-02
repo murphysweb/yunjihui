@@ -14,7 +14,7 @@ Page({
     pageSize: 10,
     loading: false,
     isLoad: false,
-    banners:null,
+    banners: null,
     iconList: [{
       icon: 'cardboardfill',
       color: 'red',
@@ -42,7 +42,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    // that.getBanner();
+    that.getBanner();
     that.setData({
       url: app.data.domain
     })
@@ -51,9 +51,15 @@ Page({
   getBanner() {
     $.get(app.data.domain + "/api/cms/adInfo/center", {}).then(res => {
       console.log(res);
-      this.setData({
-        banners: res.data.data
-      })
+      if (res.code == 200) {
+        this.setData({
+          banners: res.data.data
+        })
+      } else {
+        app.login(() => {
+          this.getBanner();
+        });
+      }
     })
   },
   /**
@@ -89,7 +95,7 @@ Page({
    */
   onPullDownRefresh: function() {
     this.setData({
-      items:[],
+      items: [],
       pageNum: 1
     })
     this.getList();

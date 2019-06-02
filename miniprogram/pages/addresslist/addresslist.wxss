@@ -1,0 +1,45 @@
+/* miniprogram/pages/addresslist/addresslist.wxss */
+
+.text-600 {
+  font-weight: 600;
+  font-size: 32rpx;
+}
+
+.address-name {
+  margin-right: 10rpx;
+}
+
+.default-btn {
+  font-size: 28rpx !important;
+  background-color: #fa5c0d21 !important;
+  color: #fa5c0d !important;
+  margin-right: 10rpx;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 10rpx;
+  left: 32rpx;
+  right: 32rpx;
+}
+.cro-btn{
+  border-left: 1rpx solid #eee;
+  padding-left: 20rpx;
+  margin-left: 10rpx;
+}
+.cro-btn .edit {
+  color: #999;
+}
+
+.cro-btn .delate {
+  color: red;
+}
+.main-box{
+  padding-bottom: 160rpx;
+}
+.no-address{
+  font-size: 32rpx;
+  color:#999;
+  text-align: center;
+  margin-top: 200rpx;
+}

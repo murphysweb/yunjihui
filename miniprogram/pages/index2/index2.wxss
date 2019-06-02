@@ -89,7 +89,7 @@
 .goods-item-boxs{
   background: #FFF;
   overflow: hidden;
-  padding: 0 32rpx;
+  padding: 0 32rpx 32rpx;
 }
 .goods-item-boxs view{
   /* display: block; */
@@ -154,3 +154,54 @@
   margin-top: 12rpx
 }
 
+/* 两列商品 */
+.goods_group{
+  overflow: hidden;
+  background: #FFF;
+  padding: 20rpx;
+}
+.goods-item2{
+  padding: 0;
+    margin: 0 1.5%;
+    margin-bottom: 20rpx;
+    width: 47%;
+    -webkit-box-shadow: 0px 0px 25rpx 0px rgba(0, 0, 0, 0.284);
+    box-shadow: 0px 0px 20rpx 0px rgba(0, 0, 0, 0.351);
+    border-radius: 8rpx;
+    overflow: hidden;
+    /* background: tan; */
+    min-height: 300rpx;
+    float: left;
+}
+.good_img_container{
+  position: relative;
+}
+.img_container{
+  position: relative;
+}
+.img_container image{
+  width: 100%;
+  display: block;
+}
+.good-info .good-name{
+  margin-bottom: 8rpx;
+    text-align: left;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    line-height: 38rpx;
+    font-size: 28rpx;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    height: 84rpx;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    padding-top: 10rpx;
+    padding-left: 14rpx;
+    padding-right: 14rpx;
+}
+.good-info .good-price{
+  font-size: 32rpx;
+  color:#fa5c0d;
+}

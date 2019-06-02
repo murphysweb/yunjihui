@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 9,
 			"list": [
 				{
 					"id": 0,
@@ -82,6 +82,20 @@
 					"id": -1,
 					"name": "首页",
 					"pathName": "pages/index2/index2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/addresslist/addresslist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址编辑",
+					"pathName": "pages/addaddress/addaddress",
 					"scene": null
 				}
 			]

@@ -8,7 +8,9 @@
     "pages/tieba/tieba",
     "pages/tepmate/index",
     "pages/addtiezi/addtiezi",
-    "pages/createsend/createsend"
+    "pages/createsend/createsend",
+    "pages/addresslist/addresslist",
+    "pages/addaddress/addaddress"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,26 +26,26 @@
       {
         "pagePath": "pages/index2/index2",
         "text": "首页",
-        "iconPath": "images/tabBar/icon_tieba.png",
-        "selectedIconPath": "images/tabBar/icon_tieba.png"
+        "iconPath": "images/tabBar/icon_index.png",
+        "selectedIconPath": "images/tabBar/icon_index_act.png"
       },
       {
         "pagePath": "pages/tieba/tieba",
         "text": "贴吧",
         "iconPath": "images/tabBar/icon_tieba.png",
-        "selectedIconPath": "images/tabBar/icon_tieba.png"
+        "selectedIconPath": "images/tabBar/icon_tieba_act.png"
       },
       {
         "pagePath": "pages/send/send",
         "text": "配送",
         "iconPath": "images/tabBar/icon_send.png",
-        "selectedIconPath": "images/tabBar/icon_send.png"
+        "selectedIconPath": "images/tabBar/icon_send_act.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/tabBar/icon_my.png",
-        "selectedIconPath": "images/tabBar/icon_my.png"
+        "selectedIconPath": "images/tabBar/icon_my_act.png"
       }
     ]
   },

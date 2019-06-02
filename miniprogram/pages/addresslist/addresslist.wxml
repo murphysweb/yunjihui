@@ -1,0 +1,186 @@
+<!--miniprogram/pages/addresslist/addresslist.wxml-->
+<view class="main-box">
+  <view class="cu-custom" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+        地址管理
+      </navigator>
+    </view>
+  </view>
+  <!-- 地址列表 -->
+  <view wx:if="{{false}}" class='cu-list menu sm-border'>
+    <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>和办事卡加适量的骄傲了</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>和办事卡加适量的骄傲了</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>和办事卡加适量的骄傲了</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>和办事卡加适量的骄傲了</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>和办事卡加适量的骄傲了</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+     <view class="cu-item">
+      <view class='content padding-tb-sm'>
+        <view>
+          <text class='text-600 address-name'>李金龙</text>
+          <text class='text-gray text-sm'>17737701050</text>
+        </view>
+        <view>
+          <!-- <text class='default-btn'>默认</text> -->
+          <button class='cu-btn bg-orange sm default-btn'>默认</button>
+          <text>和办事卡加适量的骄傲了</text>
+        </view>
+      </view>
+      <!-- <view class='action'>
+        <switch class='switch-sex sm' bindchange="switchSex"></switch>
+      </view> -->
+      <!-- 操作按钮 -->
+      <view class='cro-btn'>
+      <view class='edit'>编辑</view>
+       <view class='delate'>删除</view>
+      </view>
+    </view>
+  </view>
+  <!-- 没有地址的时候 -->
+  <view class='no-address'>还没有添加收货地址哦,赶紧添加地址吧！</view>
+  <!-- 添加按钮 -->
+  <button class='bottom-btn block bg-blue margin-tb-sm lg base-color'>
+    <text class='icon-add'></text>添加新地址</button>
+</view>

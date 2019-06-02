@@ -6,7 +6,7 @@
     </navigator>
   </view>
 </view>
-<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+<swiper class="screen-swiper square-dot" circular="true" autoplay="true" interval="5000" duration="500">
   <swiper-item wx:for="{{banners}}" wx:key>
     <image src="{{url}}{{item.image}}" mode='aspectFill'></image>
   </swiper-item>
@@ -48,19 +48,74 @@
     <view class="goods-info-li">
       <view class="goods-name">惠新西街小区 朝北-次卧</view>
       <view class="goods-d-info">起价：23 配送：34 </view>
-       <view class="goods-d-info">起价：23 配送：34 </view>
-        <view class="goods-d-info">起价：23 配送：34 </view>
+      <view class="goods-d-info">起价：23 配送：34 </view>
+      <view class="goods-d-info">起价：23 配送：34 </view>
     </view>
   </view>
-   <view class="goods-item">
+  <view class="goods-item">
     <view class="goods-img">
       <image src="https://public.danke.com.cn/public-20180207-FlEXSZ-0usMdfs5wGQQfQCmx1zkv?imageView2/1/w/380/h/285"></image>
     </view>
     <view class="goods-info-li">
       <view class="goods-name">惠新西街小区 朝北-次卧</view>
       <view class="goods-d-info">起价：23 配送：34 </view>
-       <view class="goods-d-info">起价：23 配送：34 </view>
-        <view class="goods-d-info">起价：23 配送：34 </view>
+      <view class="goods-d-info">起价：23 配送：34 </view>
+      <view class="goods-d-info">起价：23 配送：34 </view>
+    </view>
+  </view>
+</view>
+<!-- 二手商品 -->
+<view class="goods_group">
+  <view class='goods-item2'>
+    <view class="good_img_container">
+      <view class="img_container">
+        <image src="https://9i.dvmama.com/supplier/2017/03/23/1000_1000_cd226e39793d7394296186ab96cc0e76.jpg?x-oss-process=image/resize,m_fill,w_320,h_320/format,webp" mode="widthFix"></image>
+        <!-- <view class="img_label">秒杀</view> -->
+        <!-- <view class="img_label_item48">已售65561</view> -->
+      </view>
+    </view>
+    <view class='good-info'>
+      <view class='good-name'>葛瑞米·贝斯系列  来喝水吧（精装 ）</view>
+      <view class='good-price'>￥23.45</view>
+    </view>
+  </view>
+ <view class='goods-item2'>
+    <view class="good_img_container">
+      <view class="img_container">
+        <image src="https://9i.dvmama.com/supplier/2017/03/23/1000_1000_cd226e39793d7394296186ab96cc0e76.jpg?x-oss-process=image/resize,m_fill,w_320,h_320/format,webp" mode="widthFix"></image>
+        <!-- <view class="img_label">秒杀</view> -->
+        <!-- <view class="img_label_item48">已售65561</view> -->
+      </view>
+    </view>
+    <view class='good-info'>
+      <view class='good-name'>葛瑞米·贝斯系列  来喝水吧（精装 ）</view>
+      <view class='good-price'>￥23.45</view>
+    </view>
+  </view>
+   <view class='goods-item2'>
+    <view class="good_img_container">
+      <view class="img_container">
+        <image src="https://9i.dvmama.com/supplier/2017/03/23/1000_1000_cd226e39793d7394296186ab96cc0e76.jpg?x-oss-process=image/resize,m_fill,w_320,h_320/format,webp" mode="widthFix"></image>
+        <!-- <view class="img_label">秒杀</view> -->
+        <!-- <view class="img_label_item48">已售65561</view> -->
+      </view>
+    </view>
+    <view class='good-info'>
+      <view class='good-name'>葛瑞米·贝斯系列  来喝水吧（精装 ）</view>
+      <view class='good-price'>￥23.45</view>
+    </view>
+  </view>
+   <view class='goods-item2'>
+    <view class="good_img_container">
+      <view class="img_container">
+        <image src="https://9i.dvmama.com/supplier/2017/03/23/1000_1000_cd226e39793d7394296186ab96cc0e76.jpg?x-oss-process=image/resize,m_fill,w_320,h_320/format,webp" mode="widthFix"></image>
+        <!-- <view class="img_label">秒杀</view> -->
+        <!-- <view class="img_label_item48">已售65561</view> -->
+      </view>
+    </view>
+    <view class='good-info'>
+      <view class='good-name'>葛瑞米·贝斯系列  来喝水吧（精装 ）</view>
+      <view class='good-price'>￥23.45</view>
     </view>
   </view>
 </view>

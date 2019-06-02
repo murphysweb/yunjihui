@@ -1,0 +1,49 @@
+<!--miniprogram/pages/addaddress/addaddress.wxml-->
+<view class='main-box'>
+  <view class="cu-custom" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+        新增地址
+      </navigator>
+    </view>
+  </view>
+  <form>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class='action'>
+        <text class='icon-title text-orange '></text> 个人信息
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class='title'>收件人：</view>
+      <input placeholder="请输入收件人" class='radius' name='input'></input>
+    </view>
+    <view class="cu-form-group">
+      <view class='title'>手机号：</view>
+      <input placeholder="请输入手机号" class='radius' name='input'></input>
+    </view>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class='action'>
+        <text class='icon-title text-orange '></text> 收货信息
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class='title'>站点：</view>
+      <input placeholder="区域/城市/区县" class='radius' name='input'></input>
+    </view>
+    <view class="cu-form-group">
+      <view class='title'>楼栋：</view>
+      <input placeholder="" class='radius' name='input'></input>
+    </view>
+    <view class="cu-form-group">
+      <view class='title'>地址：</view>
+      <input placeholder="请输入详细地址" class='radius' name='input'></input>
+    </view>
+      <view class="cu-form-group">
+    <view class='title'>设为默认地址</view>
+    <checkbox class='round' checked></checkbox>
+  </view>
+   <!-- 按钮 -->
+  <button class='bottom-btn block bg-blue margin-tb-sm lg base-color'>
+   保存</button>
+  </form>
+</view>
