@@ -10,16 +10,16 @@
   <form>
     <view class="cu-bar bg-white solid-bottom margin-top">
       <view class='action'>
-        <text class='icon-title text-orange '></text> 个人信息
+        <text class='icon-title text-orange'></text> 个人信息
       </view>
     </view>
     <view class="cu-form-group">
       <view class='title'>收件人：</view>
-      <input placeholder="请输入收件人" class='radius' name='input'></input>
+      <input placeholder="请输入收件人" type='text' class='radius' bindinput='oninput' value='{{formData.receiver}}' data-name='receiver'></input>
     </view>
     <view class="cu-form-group">
       <view class='title'>手机号：</view>
-      <input placeholder="请输入手机号" class='radius' name='input'></input>
+      <input placeholder="请输入手机号" type='number' class='radius' bindinput='oninput' value='{{formData.mobilePhone}}' maxlength='11' data-name='mobilePhone'></input>
     </view>
     <view class="cu-bar bg-white solid-bottom margin-top">
       <view class='action'>
@@ -27,23 +27,28 @@
       </view>
     </view>
     <view class="cu-form-group">
-      <view class='title'>站点：</view>
-      <input placeholder="区域/城市/区县" class='radius' name='input'></input>
-    </view>
-    <view class="cu-form-group">
-      <view class='title'>楼栋：</view>
-      <input placeholder="" class='radius' name='input'></input>
-    </view>
-    <view class="cu-form-group">
       <view class='title'>地址：</view>
-      <input placeholder="请输入详细地址" class='radius' name='input'></input>
+      <picker mode="region" bindchange="bindRegionChange" value="region" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+      <!-- <input placeholder="区域/城市/区县" class='radius' name='input'></input> -->
     </view>
-      <view class="cu-form-group">
-    <view class='title'>设为默认地址</view>
-    <checkbox class='round' checked></checkbox>
-  </view>
-   <!-- 按钮 -->
-  <button class='bottom-btn block bg-blue margin-tb-sm lg base-color'>
-   保存</button>
+    <!-- <view class="cu-form-group">
+      <view class='title'>楼栋：</view>
+      <input placeholder="" placeholder='请输入楼层楼号' class='radius' name='input'></input>
+    </view> -->
+    <view class="cu-form-group">
+      <view class='title'>详细地址：</view>
+      <input placeholder="请输入详细地址" type='text' bindinput='oninput' value='{{formData.address}}' class='radius' data-name='address'></input>
+    </view>
+    <!-- <view class="cu-form-group">
+      <view class='title'>设为默认地址</view>
+      <checkbox class='round' checked></checkbox>
+    </view> -->
+    <!-- 按钮 -->
+    <button bindtap='save' class='bottom-btn block bg-blue margin-tb-sm lg base-color'>
+      保存</button>
   </form>
 </view>

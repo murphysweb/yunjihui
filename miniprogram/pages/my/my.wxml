@@ -59,7 +59,8 @@
           <text class='text-grey text-sm'></text>
         </view>
       </view>
-      <view class="cu-item arrow">
+      <view class="cu-item arrow"> 
+      <navigator class='nav-class' url="/pages/addresslist/addresslist" hover-class="none" open-type="redirect">
         <view class='content'>
           <text class='text-green'></text>
           <text class='text-grey'>地址管理</text>
@@ -67,6 +68,7 @@
         <view class='action'>
           <text class='text-grey text-sm'></text>
         </view>
+        </navigator>
       </view>
       <view class="cu-item arrow">
         <view class='content'>

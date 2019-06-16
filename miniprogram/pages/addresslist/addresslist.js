@@ -10,15 +10,32 @@ Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
+    addressList:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAddressList();
   },
-
+   /**
+   * 获取地址列表
+   */
+  getAddressList(){
+    $.get(app.data.domain + "/api/ec/userAddress/myList", {}).then(res => {
+        console.log(res);
+        if (res.code == 200) {
+          this.setData({
+            addressList: res.data.data
+          })
+        } else {
+          app.login(() => {
+            this.getAddressList();
+          });
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

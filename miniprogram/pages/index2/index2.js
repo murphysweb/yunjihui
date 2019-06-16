@@ -15,26 +15,27 @@ Page({
     loading: false,
     isLoad: false,
     banners: null,
+    goodsList:null,
     iconList: [{
-      icon: 'cardboardfill',
+      icon: 'deliver_fill',
       color: 'red',
-      badge: 120,
-      name: 'VR'
+      badge: 0,
+      name: '快递'
     }, {
-      icon: 'recordfill',
+      icon: 'goodsnew',
       color: 'orange',
-      badge: 1,
-      name: '录像'
+      badge: 0,
+      name: '外卖'
     }, {
-      icon: 'picfill',
+      icon: 'coin',
       color: 'yellow',
       badge: 0,
-      name: '图像'
+      name: '二手'
     }, {
-      icon: 'noticefill',
+      icon: 'group',
       color: 'olive',
-      badge: 22,
-      name: '通知'
+      badge: 0,
+      name: '众包'
     }],
   },
   /**
@@ -43,6 +44,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     that.getBanner();
+    that.getGoodsList();
     that.setData({
       url: app.data.domain
     })
@@ -61,6 +63,25 @@ Page({
         });
       }
     })
+  },
+  // 商品列表
+  getGoodsList() {
+    $.get(app.data.domain + "/api/ec/goodsInfo/center", {}).then(res => {
+      console.log(res);
+      if (res.code == 200) {
+        this.setData({
+          goodsList: res.data.data
+        })
+      } else {
+        app.login(() => {
+          this.getGoodsList();
+        });
+      }
+    })
+  },
+  // 改功能暂未开放
+  notYetOpen(){
+    app.msg("该功能暂未开放")
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
