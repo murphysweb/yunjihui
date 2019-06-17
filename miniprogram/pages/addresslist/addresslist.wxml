@@ -3,22 +3,22 @@
   <view class="cu-custom" style="height:{{CustomBar}}px;">
     <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
       <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-        地址管理
+        <text class='icon-back'></text>地址管理
       </navigator>
     </view>
   </view>
   <!-- 地址列表 -->
-  <view wx:if="{{addressList}}" class='cu-list menu sm-border'>
-    <view class="cu-item">
+  <view wx:if="{{addressList.length}}" class='cu-list menu sm-border'>
+    <view class="cu-item" wx:for="{{addressList}}">
       <view class='content padding-tb-sm'>
         <view>
-          <text class='text-600 address-name'>李金龙</text>
-          <text class='text-gray text-sm'>17737701050</text>
+          <text class='text-600 address-name'>{{item.receiver}}</text>
+          <text class='text-gray text-sm'>{{item.mobilePhone}}</text>
         </view>
         <view>
           <!-- <text class='default-btn'>默认</text> -->
-          <button class='cu-btn bg-orange sm default-btn'>默认</button>
-          <text>小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！小目标还没有实现！</text>
+          <!-- <button class='cu-btn bg-orange sm default-btn'>默认</button> -->
+          <text>{{item.province}}{{item.city}}{{item.area}}{{item.address}}</text>
         </view>
       </view>
       <!-- <view class='action'>
@@ -26,15 +26,15 @@
       </view> -->
       <!-- 操作按钮 -->
       <view class='cro-btn'>
-      <view class='edit'>编辑</view>
-       <view class='delate'>删除</view>
+      <view class='edit' bindtap='edit' data-id='{{item.id}}'>编辑</view>
+       <view class='delate' bindtap='deletes' data-id='{{item.id}}'>删除</view>
       </view>
     </view>
   </view>
   <!-- 没有地址的时候 -->
-  <view class='no-address'>还没有添加收货地址哦,赶紧添加地址吧！</view>
+  <view wx:if="{{!addressList.length}}" class='no-address'>还没有添加收货地址哦,赶紧添加地址吧！</view>
   <!-- 添加按钮 -->
-  <navigator url="/pages/addaddress/addaddress" open-type="redirect"  hover-class="none">
+  <navigator url="/pages/addaddress/addaddress" open-type="navigate"  hover-class="none">
   <button class='bottom-btn block bg-blue margin-tb-sm lg base-color'>
     <text class='icon-add'></text>添加新地址</button>
   </navigator>

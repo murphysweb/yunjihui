@@ -36,6 +36,23 @@ Page({
         }
       })
   },
+  // 编辑地址
+  edit(e){
+    wx.navigateTo({
+      url: `/pages/addaddress/addaddress?id=${e.target.dataset.id}`
+    })
+  },
+  // 删除地址
+  deletes(e){
+    $.get(app.data.domain + `/api/ec/userAddress/delete`, { id: e.target.dataset.id}, "POST", false, false, {
+      "content-type": "application/x-www-form-urlencoded"
+    }).then(res => {
+      if (res.code == 200) {
+        this.getAddressList()
+      }
+      wx.hideLoading();
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,7 +64,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(this.data.addressList){
+      this.getAddressList();
+    }
   },
 
   /**

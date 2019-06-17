@@ -1,8 +1,11 @@
-var app = getApp();
+const app = getApp();
+var request_tool = require('../../utils/request.js');
+var $ = new request_tool();
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
+    response:null,
     foodtype: 0,
     num: 0,
     buycar_num: 0,
@@ -16,11 +19,11 @@ Page({
       { id: 3, value: "姜葱味"},
     ]
   },
-  onLoad: function() {
-    this.setData({
-      buycar_num: app.globalData.buycar_num,
-      totalMoney: app.globalData.totalMoney
-    })
+  onLoad: function (options) {
+    options.url = app.data.domain;
+    this.setData(options);
+   
+    this.getGoodsInfo();
   },
   resetNum: function (e) {
     var type = e.currentTarget.dataset.id;
@@ -91,6 +94,28 @@ Page({
   toSubmit: function() {
     wx.navigateTo({
       url: '../submitOrder/submitOrder',
+    })
+  },
+  // 获取商品详情
+  getGoodsInfo(){
+    $.get(app.data.domain + '/api/ec/goodsInfo/detail', {id:this.data.id}, "get").then(res => {
+      if (res.code == 200) {
+        this.setData({
+          response:res.data
+        })
+      }
+      wx.hideLoading();
+    })
+  },
+  // 加入购物车
+  addCart(){
+    $.get(app.data.domain + '/api/ec/cart/quickAddCart', { goodsId:this.data.id}, "POST", false, false, {
+      "content-type": "application/x-www-form-urlencoded"
+    }).then(res => {
+      if (res.code == 200) {
+        app.msg("添加购物车成功")
+      }
+      wx.hideLoading();
     })
   }
 })

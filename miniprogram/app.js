@@ -8,6 +8,13 @@ App({
     domain: 'https://www.chuangyedaoyu.com' //线上环境
   },
   onLaunch: function() {
+    // 如果未授权需要跳转到 未取到userInfo信息
+    let user_info = wx.getStorageSync('user_info');
+    if (!user_info) {
+      wx.reLaunch({
+        url: 'pages/guide/guide'
+      })
+    }
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
@@ -75,7 +82,6 @@ App({
    */
   onShow: function(options) {
     var that = this;
-    console.log("options", options)
     if (wx.getUpdateManager) {
       const updateManager = wx.getUpdateManager()
       updateManager.onCheckForUpdate(function(res) {
@@ -147,29 +153,6 @@ App({
   getOpenId(params) {
     $.get(this.data.domain + '/api/token/getOpenId', params).then(res => {
       console.log(res)
-    })
-  },
-
-  /**
-   * 保存form_id
-   */
-  saveFormId: function(form_id, type) {
-    return false;
-
-    var that = this;
-
-    var params = {
-      user_token: that.get_token(),
-      form_id: form_id,
-      type: type
-    };
-
-    $.get(that.data.domain + '/user/saveFormId', params).then(function(res) {
-      if (res.code == -999) {
-        that.login(function() {
-          that.saveFormId(form_id, type);
-        })
-      }
     })
   },
 

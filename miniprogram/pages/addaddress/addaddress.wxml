@@ -3,7 +3,7 @@
   <view class="cu-custom" style="height:{{CustomBar}}px;">
     <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
       <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-        新增地址
+        <text class='icon-back'></text>新增地址
       </navigator>
     </view>
   </view>

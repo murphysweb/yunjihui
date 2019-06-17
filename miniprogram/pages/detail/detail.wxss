@@ -249,6 +249,7 @@ page {
   margin-left: 20rpx;
 }
 .toPay {
+  color:#FFF;
   padding: 40rpx 80rpx;
-  background: #ffe400;
+  background: #fa5c0d;
 }

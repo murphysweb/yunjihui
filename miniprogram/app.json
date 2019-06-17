@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index2/index2",
+    "pages/guide/guide",
     "pages/detail/detail",
     "pages/send/send",
     "pages/my/my",
@@ -10,7 +10,8 @@
     "pages/addtiezi/addtiezi",
     "pages/createsend/createsend",
     "pages/addresslist/addresslist",
-    "pages/addaddress/addaddress"
+    "pages/addaddress/addaddress",
+    "pages/cart/cart"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,7 +25,7 @@
     "selectedColor": "#fc8449",
     "list": [
       {
-        "pagePath": "pages/index2/index2",
+        "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/tabBar/icon_index.png",
         "selectedIconPath": "images/tabBar/icon_index_act.png"

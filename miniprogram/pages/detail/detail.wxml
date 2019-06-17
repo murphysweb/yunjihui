@@ -1,38 +1,38 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
   <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
     <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-      <text class='icon-back'></text> 商品详情
+      <text class='icon-back'></text> {{response.name}}
     </navigator>
   </view>
 </view>
 <view class="detailPic">
-  <image src="../../images/food2.jpg"></image>
+  <image src="{{url}}{{response.headImage}}"></image>
 </view>
 <view class="messageBlock">
   <view class="Message">
     <view class="detailMessage">
-      <text class="name">黄焖鸡米饭 </text>
-      <text class="monthsell">月售330</text>
-      <text class="price">¥12.43 <text>¥14.43</text></text>
+      <text class="name">{{response.name}}</text>
+      <!-- <text class="monthsell">月售330</text> -->
+      <text class="price">¥{{response.price}} <text></text></text>
     </view>
-    <view class="addReduce">
+    <!-- <view class="addReduce">
       <text class="iconfont icon-reduce" bindtap="reduce"></text>
       <text class="orderNum"> {{num}} </text>
       <text class="iconfont icon-add" bindtap="add"></text>
-    </view>
+    </view> -->
   </view>
   <view class="otherMessage">
     <view class="S_M">
       商品信息
     </view>
     <view>
-      配米饭一份哦
+     {{response.detail}}
     </view>
   </view>
 </view>
 
 <!--评价-->
-<view class="saySomething">
+<!-- <view class="saySomething">
   <view class="sayTitle">
     <text>外卖评价（好评率100%）</text>
     <text class="iconfont .icon-more" bindtap="toAllEvaluate">共3条评价</text>       
@@ -73,24 +73,24 @@
       2017/06/05
     </view>
   </view>
-</view>
+</view> -->
 
 <!--加入购物车，立即购买  -->
 <view class="addBuy">
   <view class="settlement">
     <view class="tlement">
       <view class="orderLeft">
-        <view class="buycar_icon">
+        <!-- <view class="buycar_icon">
           <view class="iconfont icon-buycar"></view>
           <view class="buycar_num">{{buycar_num}}</view>
         </view>
         <view class="totalMoney">
           <view class="price">合计：{{totalMoney}}元</view>
           <view class="otherMoney">还差5元起送</view>  
-        </view>
+        </view> -->
       </view>      
-      <view class="toPay" bindtap="toSubmit">
-        <text>去结算</text>
+      <view class="toPay" bindtap="addCart">
+        <text>加入购物车</text>
       </view>
     </view>
   </view> 
